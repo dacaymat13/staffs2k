@@ -1,0 +1,29 @@
+.responsive-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.responsive-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.responsive-form input[type="text"], .responsive-form input[type="email"], .responsive-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.responsive-form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+
+@media (max-width: 600px) {
+  .responsive-form input[type="text"], .responsive-form input[type="email"], .responsive-form textarea {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+  border: 0;
+}
+p{
+  font-size: 14px;
+}
+
+.panel-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+th{
+  font-weight: 500;
+  color: white;
+}

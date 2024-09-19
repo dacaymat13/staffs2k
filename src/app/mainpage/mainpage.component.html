@@ -1,0 +1,67 @@
+<div class="navbar container-fluid sidenav" [ngClass]="{ open: isOpen }">
+  <div class="logo-details">
+    <img src="images/staffProf.jpg" class="dp">
+    <p class="name">Marites Ka</p>
+  </div>
+  <div class="menu">
+    <a
+      class="menu-item nav-link"
+      [routerLink]="['./home']"
+      routerLinkActive="active"
+    >
+      <i class="fa fa-home mx-2"></i> Home
+    </a>
+    <a
+      class="menu-item nav-link"
+      [routerLink]="['./expenses']"
+      routerLinkActive="active"
+    >
+      <i class="fa-solid fa-jug-detergent mx-2"></i> Expenses
+    </a>
+    <a
+      class="menu-item nav-link"
+      [routerLink]="['./customers']"
+      routerLinkActive="active"
+    >
+      <i class="fas fa-user-friends mx-2" style="font-size: 15px;"></i> Customers
+    </a>
+    <a
+      class="menu-item nav-link"
+      [routerLink]="['./reports']"
+      routerLinkActive="active"
+    >
+      <i class="fa-regular fa-file-chart-column mx-2"></i> Reports
+    </a>
+  </div>
+  <div class="pro mt-5 pt-5">
+    <a
+      class="menu-item nav-link"
+      [routerLink]="['/login']"
+      routerLinkActive="active"
+    >
+      <i class="fa-solid fa-right-from-bracket mx-2"></i> Log Out
+    </a>
+  </div>
+</div>
+
+<div class="main-content" [ngStyle]="{ 'margin-left.px': isOpen ? 250 : 0 }">
+  <div class="navbar-header">
+    <span class="nav-toggle" (click)="toggleNav()">
+      <i class="fa fa-bars"></i>
+    </span>
+    <span class="nav-title text-responsive fw-bold">
+      S2K LAUNDRY <span class="text-black-50 fw-bolder">STAFF</span>
+    </span>
+  </div>
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="container-fluid">
+          <div class="mx-1">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

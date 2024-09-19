@@ -1,0 +1,98 @@
+<!-- <h1 class="text-start">Customers</h1> -->
+<div class="container-table p-1 mat-elevation-z0" style="background-color: white;">
+  <div class="container mb-4" style="position: sticky;">
+      <h2 class="text-center">List of Customers</h2>
+      <div class="row">
+          <div class="col-sm-10">
+              <div class="input-wrapper w-25 rounded">
+                  <i class="icon fa-solid fa-magnifying-glass"></i>
+                  <input class="search-input" (ngModelChange)="applyFilter($event)" placeholder="Search" [(ngModel)]="value" #input>
+
+                  @if (value) {
+                      <button class="clearSearch" aria-label="Clear" (click)="clear()">
+                          <i class="fa-solid fa-xmark"></i>
+                      </button>
+                  }
+              </div>
+          </div>
+          <div class="col mt-3" >
+              <span style="display: inline-flex;"><p class="me-2 mt-2 text-secondary">Show</p>
+              <select class="form-select form-select-sm py-1"  (change)="onValueChange($event)" style="width: 35%;" aria-label="Small select example">
+                  <option selected value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="100">100</option>
+                  <!-- @for (option of options; track $index){
+                      <option [value]="option.value">{{ option.viewValue }}</option>
+                  } -->
+              </select>
+              <p class="ms-2 mt-2 text-secondary">entries</p>
+              </span>
+          </div>
+          <!-- <mat-paginator [pageSizeOptions]="[2,3,5]"></mat-paginator> -->
+      </div>
+  </div>
+  <!-- <mat-paginator [pageSizeOptions]="pageoptions" class="mt-2">
+  </mat-paginator> -->
+<div class="containerTab" >
+  <table mat-table [dataSource]="dataSource">
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let customer" class="fw-bold"> {{customer.id}} </td>
+      </ng-container>
+
+      <!-- Image Column -->
+      <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef> Customer Image </th>
+          <td mat-cell *matCellDef="let customer"> {{customer.image}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+          <td mat-cell *matCellDef="let customer"> {{customer.name}} </td>
+      </ng-container>
+
+      <!-- Phone# Column -->
+      <ng-container matColumnDef="phoneno">
+          <th mat-header-cell *matHeaderCellDef> Customer Phone # </th>
+          <td mat-cell *matCellDef="let customer"> {{customer.phoneno}} </td>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let customer"> {{customer.address}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let customer"> {{customer.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="viewing">
+        <th mat-header-cell *matHeaderCellDef> Tool </th>
+        <td mat-cell *matCellDef="">  </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="clickData()" class="data-row"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="5">No Results Found</td>
+      </tr>
+  </table>
+</div>
+  <!-- <mat-paginator [pageSizeOptions]="pageoptions" class="mt-2">
+  </mat-paginator> -->
+
+  <!-- <mat-paginator [length]="dataSource.data.length"  pageIndex="0" (page)="onPageChange($event)" aria-label="Select page of GitHub search results"></mat-paginator> -->
+</div>
+
+
