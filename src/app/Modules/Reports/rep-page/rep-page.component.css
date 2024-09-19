@@ -100,7 +100,7 @@ nav a.active::before {
 .tab-round nav a {
   padding-top: 13px;
   text-align: center;
-  background: #32557f;
+  background: #32557fbe;
   color: #fff;
   border-radius: 10px;
   height: 100px;
