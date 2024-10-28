@@ -32,7 +32,7 @@ tr.data-row:not(.example-expanded-row):active {
   overflow: hidden;
   margin: 1%;
   padding: .5%;
-  border: solid rgba(116, 115, 115, 0.644) 2px;
+  border: solid rgba(115, 116, 116, 0.644) 2px;
 }
 
 .icon {

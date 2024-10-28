@@ -51,31 +51,24 @@
       <th style="padding: 8px; text-align: left;">Entry No.</th>
       <th style="padding: 8px; text-align: left;">Transaction</th>
       <th style="padding: 4px; text-align: left;">Payments</th>
+      <th></th>
       <th style="padding: 8px; text-align: right;">Total Income</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th style="padding: 8px;">1</th>
-      <td style="padding: 8px;">Rico</td>
-      <td style="padding: 8px; text-align: left;">100</td>
-      <td style="padding: 8px;"></td>
-    </tr>
-    <tr>
-      <th style="padding: 8px;">2</th>
-      <td style="padding: 8px;">Kobe</td>
-      <td style="padding: 8px; text-align: left;">100</td>
-      <td style="padding: 8px;"></td>
-    </tr>
-    <tr>
-      <th style="padding: 8px;">3</th>
-      <td style="padding: 8px;">Siro</td>
-      <td style="padding: 8px; text-align: left;">1500</td>
-      <td style="padding: 8px;"></td>
-    </tr>
+    @for(p of payment; track p.Tracking_number){
+      <tr>
+        <th style="padding: 8px;">{{$index+1}}</th>
+        <td style="padding: 8px;">{{p.Tracking_number}}</td>
+        <td style="padding: 8px; text-align: left;">{{p.total}}</td>
+        <td style="padding: 8px; text-align: left;"></td>
+        <td style="padding: 8px;"></td>
+      </tr>
+      }
     <tr>
       <th colspan="2" style="padding: 8px;">Total:</th>
-      <th style="padding: 8px; text-align: left;">500</th>
+      <th style="padding: 8px; text-align: left;">{{totalpayment}}</th>
+      <td style="padding: 8px;"></td>
       <td style="padding: 8px;"></td>
     </tr>
   </tbody>
@@ -89,32 +82,24 @@
       <th style="padding: 8px; text-align: left;">Bought Item</th>
       <th style="padding: 8px;"></th>
       <th style="padding: 8px; text-align: center;">Amount Expenses</th>
+      <th style="padding: 8px;"></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th style="padding: 8px;">1</th>
-      <td style="padding: 8px;">Rico</td>
-      <td style="padding: 8px;"></td>
-      <td style="padding: 8px; text-align: center;">50</td>
-    </tr>
-    <tr>
-      <th style="padding: 8px;">2</th>
-      <td style="padding: 8px;">Kobe</td>
-      <td style="padding: 8px;"></td>
-      <td style="padding: 8px; text-align: center;">25</td>
-    </tr>
-    <tr>
-      <th style="padding: 8px;">3</th>
-      <td style="padding: 8px;">Siro</td>
-      <td style="padding: 8px;"></td>
-      <td style="padding: 8px; text-align: center;">50</td>
-    </tr>
+    @for(e of expense; track e.Admin_ID){
+      <tr>
+        <th style="padding: 8px;">{{$index+1}}</th>
+        <td style="padding: 8px;">{{e.Desc_reason}}</td>
+        <td style="padding: 8px;"></td>
+        <td style="padding: 8px; text-align: center;">{{e.total}}</td>
+        <td style="padding: 8px;"></td>
+      </tr>
+    }
     <tr>
       <th colspan="2" style="padding: 8px;">Total:</th>
-      <th style="padding: 8px; text-align: right;">500</th>
-      <th style="padding: 8px; text-align: center;">125</th>
-      <th style="padding: 8px; text-align: right;">375</th>
+      <th style="padding: 8px; text-align: right;">{{totalpayment}}</th>
+      <th style="padding: 8px; text-align: center;">{{totalexpense}}</th>
+      <th style="padding: 8px; text-align: right;">{{overalltotal}}</th>
     </tr>
   </tbody>
 </table>

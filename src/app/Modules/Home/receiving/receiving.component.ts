@@ -35,6 +35,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './receiving.component.css'
 })
 export class ReceivingComponent {
+submitPayment() {
+throw new Error('Method not implemented.');
+}
   displayedColumns = ['code', 'name', 'numbers', 'date', 'time', 'type', 'amount', 'payment', 'status'];
   dataSource = ELEMENT_DATA;
 

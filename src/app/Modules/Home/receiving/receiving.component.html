@@ -70,7 +70,7 @@
                   }@else {
                     <span style="color: rgb(60, 157, 231);">
                       {{element.payment}}
-                    </span>
+                    </span>   
                   }
                 </td>
               </ng-container>
@@ -93,29 +93,29 @@
 
           </div>
         </div>
+        
+          <div class="modal fade" id="roomInfoModal1" tabindex="-1" style="margin-top: 8%;" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Payment</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="fs-4 w-100" style="display: inline-flex; flex-direction: row; justify-content: space-between;">Enter Cash Amount:  <input type="text" class="form-control w-25" placeholder="0.00" ></p>
+                  <p class="fs-4">Total Laundry Amount: <span style="float: right; font-size: 25px; font-weight: 500;">530.00</span></p>
+                  <hr style="width: 80%;" class="px-3">
+                  <p class="fs-5">Change: <span style="float: right; font-size: 20px; font-weight: 500;">70.00</span></p>
 
-        <div class="modal fade" id="roomInfoModal1" tabindex="-1" style="margin-top: 8%;" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Payment</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p class="fs-4 w-100" style="display: inline-flex; flex-direction: row; justify-content: space-between;">Enter Cash Amount:  <input type="text" class="form-control w-25" placeholder="0.00" ></p>
-                <p class="fs-4">Total Laundry Amount: <span style="float: right; font-size: 25px; font-weight: 500;">530.00</span></p>
-                <hr style="width: 80%;" class="px-3">
-                <p class="fs-5">Change: <span style="float: right; font-size: 20px; font-weight: 500;">70.00</span></p>
 
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Submit Payment</button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">Submit Payment</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
         </div>
 

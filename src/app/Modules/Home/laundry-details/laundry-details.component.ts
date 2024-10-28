@@ -9,6 +9,12 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './laundry-details.component.css'
 })
 export class LaundryDetailsComponent {
+addAdditionalServices() {
+throw new Error('Method not implemented.');
+}
+addWeight() {
+throw new Error('Method not implemented.');
+}
   constructor(
     private route: Router
   ){}

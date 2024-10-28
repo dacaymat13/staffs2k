@@ -13,14 +13,14 @@
           <form>
               <div id="wrong" class="text-center text-danger mx-4 rounded mb-3" style="display: none; background-color: rgba(251, 198, 198, 0.896); color: rgb(247, 76, 76); font-size: 14px;">Either the Username or Password you've entered is incorrect!</div>
 
-              <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username" required />
+              <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" [(ngModel)]="email" required />
 
               <div id="nousername" class="text-danger mt-2 mb-3" style="display: none;">
                   <small>Please input a username</small>
               </div>
 
 
-              <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required />
+              <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="password" required />
               <div id="nopassword" class="text-danger mt-2 mb-3" style="display: none;">
                   <small>Please input a password</small>
               </div>

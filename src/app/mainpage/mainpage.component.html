@@ -1,7 +1,7 @@
 <div class="navbar container-fluid sidenav" [ngClass]="{ open: isOpen }">
   <div class="logo-details">
     <img src="images/staffProf.jpg" class="dp">
-    <p class="name">Staff 1</p>
+    <p class="name">{{user?.Admin_fname}} {{user?.Admin_mname}} {{user?.Admin_lname}}</p>
   </div>
   <div class="menu">
     <a

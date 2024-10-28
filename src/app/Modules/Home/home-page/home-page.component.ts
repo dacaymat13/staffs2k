@@ -13,7 +13,7 @@ import $ from 'jquery';
 export class HomePageComponent implements OnInit{
   ngOnInit(): void {
     this.initializeNavigation();
-  }
+  } 
 
   private initializeNavigation(): void {
     $('nav').each(function() {
