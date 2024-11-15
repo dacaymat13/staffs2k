@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export interface customer {
   id: any;
-  image: any;
+  
   name: string;
   phoneno: any;
   address: string;
@@ -18,16 +18,16 @@ export interface customer {
 }
 
 const ELEMENT_DATA: customer[] = [
-  {id: 1, image: 'hi', name: 'Minerva', phoneno: '0965-873-6756', address: '234 NW Bobcat Lane, St. Robert', email: 'minerva@email.com'},
-  {id: 2, image: 'hi', name: 'Carlo', phoneno: '0965-873-6756', address: 'Ullamcorper. Street, Roseville, NH', email: 'carlo@email.com'},
-  {id: 3, image: 'hi', name: 'Rivera', phoneno: '0965-873-6756', address: 'Sodales Av., Tamuning, PA', email: 'rivera@email.com'},
-  {id: 4, image: 'hi', name: 'Borso', phoneno: '0965-873-6756', address: 'Integer Rd., Corona, New Mexico', email: 'borso@email.com'},
-  {id: 5, image: 'hi', name: 'Piolo', phoneno: '0965-873-6756', address: 'Dolor. Av., Muskegon, KY', email: 'piolo@email.com'},
-  {id: 6, image: 'hi', name: 'Carinne', phoneno: '0965-873-6756', address: 'Tortor. Street, Santa Rosa, MN', email: 'carinne@email.com'},
-  {id: 7, image: 'hi', name: 'Timothy', phoneno: '0965-873-6756', address: 'Nunc Road, Lebanon, KY', email: 'timothy@email.com'},
-  {id: 8, image: 'hi', name: 'Kyle', phoneno: '0965-873-6756', address: 'Viverra. Avenue, Latrobe, DE', email: 'kyle@email.com'},
-  {id: 9, image: 'hi', name: 'Joshua', phoneno: '0965-873-6756', address: 'Lacinia Avenue,Idaho Falls, Ohio', email: 'joshua@email.com'},
-  {id: 10, image: 'hi', name: 'Qwuoro', phoneno: '0965-873-6756', address: 'Ullamcorper Avenue, Amesbury, HI', email: 'qwuoro@email.com'},
+  {id: 1,  name: 'Minerva', phoneno: '0965-873-6756', address: '234 NW Bobcat Lane, St. Robert', email: 'minerva@email.com'},
+  {id: 2,  name: 'Carlo', phoneno: '0965-873-6756', address: 'Ullamcorper. Street, Roseville, NH', email: 'carlo@email.com'},
+  {id: 3, name: 'Rivera', phoneno: '0965-873-6756', address: 'Sodales Av., Tamuning, PA', email: 'rivera@email.com'},
+  {id: 4, name: 'Borso', phoneno: '0965-873-6756', address: 'Integer Rd., Corona, New Mexico', email: 'borso@email.com'},
+  {id: 5, name: 'Piolo', phoneno: '0965-873-6756', address: 'Dolor. Av., Muskegon, KY', email: 'piolo@email.com'},
+  {id: 6, name: 'Carinne', phoneno: '0965-873-6756', address: 'Tortor. Street, Santa Rosa, MN', email: 'carinne@email.com'},
+  {id: 7, name: 'Timothy', phoneno: '0965-873-6756', address: 'Nunc Road, Lebanon, KY', email: 'timothy@email.com'},
+  {id: 8, name: 'Kyle', phoneno: '0965-873-6756', address: 'Viverra. Avenue, Latrobe, DE', email: 'kyle@email.com'},
+  {id: 9, name: 'Joshua', phoneno: '0965-873-6756', address: 'Lacinia Avenue,Idaho Falls, Ohio', email: 'joshua@email.com'},
+  {id: 10, name: 'Qwuoro', phoneno: '0965-873-6756', address: 'Ullamcorper Avenue, Amesbury, HI', email: 'qwuoro@email.com'},
 ];
 
 @Component({
@@ -56,7 +56,7 @@ export class CustListComponent implements AfterViewInit{
   pagesize: any;
   value: any = '';
 
-  displayedColumns: string[] = ['id', 'image', 'name', 'phoneno', 'address', 'email'];
+  displayedColumns: string[] = ['id',  'name', 'phoneno', 'address', 'email'];
   dataSource = new MatTableDataSource<customer>(ELEMENT_DATA);
   filteredValue = this.dataSource.data;
 

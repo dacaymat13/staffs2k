@@ -14,6 +14,9 @@ import Swal from 'sweetalert2';
   styleUrl: './exp-list.component.css'
 })
 export class ExpListComponent implements OnInit{
+updateExpense() {
+throw new Error('Method not implemented.');
+}
   today: any = '';
   currentDateTime: any = '';
   expId: any;
@@ -23,6 +26,7 @@ export class ExpListComponent implements OnInit{
   imagePreview: string | ArrayBuffer | null = '';
   intervalId: any;
   expDet: any;
+  
 
 
   constructor(
@@ -44,11 +48,11 @@ export class ExpListComponent implements OnInit{
   staffId: any;
 
   addExpense = new FormGroup({
-    Admin_ID: new FormControl("2"),
+    Admin_ID: new FormControl(),
     Amount: new FormControl(),
     Desc_reason: new FormControl(),
     Receipt_filenameimg: new FormControl(),
-    Datetime_taken: new FormControl(this.today)
+    // Datetime_taken: new FormControl(this.today)
   });
 
 
@@ -98,6 +102,7 @@ export class ExpListComponent implements OnInit{
     // this.addExpense.value.Admin_ID = localStorage.getItem('staffID');
     // console.log(this.addExpense.value.Admin_ID);
     // this.addExpense.value.Datetime_taken = this.currentDateTime;
+    this.addExpense.value.Admin_ID = localStorage.getItem('staffId');
     this.staffservice.addExp(this.addExpense.value).subscribe(
       (response) => {
         console.log('Expense added successfully:', response);
@@ -185,14 +190,15 @@ export class ExpListComponent implements OnInit{
   }
 
   populateUpdateForm(expense: any) {
+    this.expId = expense.Expense_ID; 
     this.addExpense.patchValue({
       Amount: expense.Amount,
       Desc_reason: expense.Desc_reason,
-      
+     
     });
     this.imagePreview = `http://localhost:8000/storage/${expense.Receipt_filenameimg}`;
-
   }
+  
 
    
 

@@ -19,7 +19,7 @@ export class RepExpenseComponent implements OnInit{
     this.serve.getincome().subscribe((data: any) => {
       console.log(data)
       this.expense = data.expenses;
-      this.totalexpense = data.totalexpense;
+      this.totalexpense = data.totalexpenses;
     })
   }
 

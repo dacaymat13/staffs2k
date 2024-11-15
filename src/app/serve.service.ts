@@ -25,7 +25,7 @@ export class ServeService {
 
   getStaff():Observable<any>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
-    return this.http.get(this.apiurl + "staff", { headers });
+    return this.http.get(this.apiurl + "user", { headers });
   }
 
   getexpense(): Observable<any>{
@@ -50,20 +50,24 @@ export class ServeService {
 
   //EXPENSES
   getExp(): Observable<any> {
-    return this.http.get(this.apiurl + "dispListExp",);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    return this.http.get(this.apiurl + "dispListExp", {headers});
   }
   addExp(data: any): Observable<any> {
-    return this.http.post(this.apiurl + "addExp", data);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    return this.http.post(this.apiurl + "addExp", data, {headers});
   }
   uploadExpImg(id: any, expImg: File): Observable<any> {
-
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
     const formData = new FormData();
     formData.append('Expense_ID', id);
     formData.append('file', expImg);
 
-    return this.http.post(this.apiurl + "uploadExpImg", formData);
+    return this.http.post(this.apiurl + "uploadExpImg", formData, {headers});
   }
   getExpReceipt(expId: any): Observable<any> {
-    return this.http.get(this.apiurl + "getExpReceipt/" + expId);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    return this.http.get(this.apiurl + "getExpReceipt/" + expId, {headers});
   }
+  
 }

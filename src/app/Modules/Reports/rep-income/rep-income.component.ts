@@ -22,9 +22,9 @@ export class RepIncomeComponent implements OnInit{
       console.log(data)
       this.expense = data.expenses;
       this.payment = data.payment;
-      this.totalexpense = data.totalexpense;
+      this.totalexpense = data.totalexpenses;
       this.totalpayment = data.totalpayment;
-      this.overalltotal = data.overalltotal;
+      this.overalltotal = data.overalltal;
     })
   }
 
